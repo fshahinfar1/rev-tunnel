@@ -6,7 +6,7 @@
 
 # نمای کلی کارکرد
 
-![دید کلی اتصالات شبکه و اجزای آن](./docs/rev-tunnel-arch.png)
+<img src="./docs/rev-tunnel-arch.png" alt="دید کلی اتصالات شبکه و اجزای آن" height="300">
 
  کاربر از طریق یک سرور در دسترس با آی‌پی مشخص به شبکه خصوصی متصل می‌شود. برای برقرار این ارتباط 
  یک ماشین با دسترسی به شبکه خصوصی یک تونل به سرور ایجاد می‌کند تا ترافیک از طریق آن به شبکه منتقل شود.
@@ -21,9 +21,10 @@
 
  روی *ماشین ۱* تنظیمات ssh زیر را انجام دهید:
  در فایل
- /etc/ssh/sshd_config
+`/etc/ssh/sshd_config`
  مقدار GatewayPorts را به yes تغییر دهید و حالت comment خارج اش کنید (و یا اگر این نام وجود ندارد به فایل اضافه کنید).
- [Enable GatewayPorts for SSH Daemon](./docs/gatewayports.png)
+ 
+ <img src="./docs/gatewayports.png" alt="Enable GatewayPorts for SSH Daemon" height="200">
  
  سرویس ssh را ریستارت کنید (دستور زیر) تا تغییرات اثر بخش شود.
  ```bash
