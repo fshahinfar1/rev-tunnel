@@ -1,0 +1,15 @@
+# interface name reachable from darkside
+IFNAME_DARKSIDE=eth-1
+# interface name to the brightside
+IFNAME_LIGHTSIDE=eth-2
+
+# description of VPS
+TARGET_SERVER="IP ADDR"
+TARGET_SERVER_USER=ubuntu
+TARGET_SERVER_SSH_PORT=22
+TARGET_SERVER_SSH_PRIVATE_KEY="PATH TO SSH KEY FOR SERVER"
+TARGET_SERVER_FORWARD_PORT=1234
+
+# a listen port on GATEWAY
+LOCAL_LISTEN_PORT=8080
+
