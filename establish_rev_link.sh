@@ -60,9 +60,13 @@ teardown_env() {
 }
 
 open_rev_tunnel() {
+	TMP_USE_SSH_KEY=""
+	if [ -n "$TARGET_SERVER_SSH_PRIVATE_KEY" ]; then
+		TMP_USE_SSH_KEY="-i $TARGET_SERVER_SSH_PRIVATE_KEY"
+	fi
 	sudo ip netns exec $NS \
 		ssh -N \
-			-i "$TARGET_SERVER_SSH_PRIVATE_KEY" \
+			"$TMP_USE_SSH_KEY" \
 			-R "$TARGET_SERVER":"$TARGET_SERVER_FORWARD_PORT":127.0.0.1:"$LOCAL_LISTEN_PORT" \
 			-p $TARGET_SERVER_SSH_PORT \
 			$TARGET_SERVER_USER@$TARGET_SERVER
@@ -86,7 +90,7 @@ wait_until_ctrl_c() {
 
 main() {
 	setup_env
-	launch_proxy_server
+	# launch_proxy_server
 	open_rev_tunnel
 	# wait_until_ctrl_c
 	teardown_env
